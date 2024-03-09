@@ -1,5 +1,5 @@
 @use 'config' as *;  
-
+ 
 * {
     box-sizing: border-box;
 }
@@ -93,6 +93,7 @@ ul {
     .selected-user-block {
         @include set-size(100%, auto);
         position: relative;
+        display: none;
         .close-btn {
             position: absolute;
             right: 0;

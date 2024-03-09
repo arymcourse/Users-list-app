@@ -1,6 +1,6 @@
 function UserService(url) { 
     this.url = url; 
-}
+} 
 
 UserService.prototype.requestAllUsers = async function() {
     try {
