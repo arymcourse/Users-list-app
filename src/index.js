@@ -5,4 +5,4 @@ async function usersApp() {
     usersServise.renderAllUsers(users);
 }
 
-usersApp();
+usersApp(); 

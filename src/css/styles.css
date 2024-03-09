@@ -21,10 +21,11 @@ ul {
   list-style-type: none;
 }
 
-section.users-list-app {
-  width: 65%;
+.users-list-app {
+  width: 61%;
   height: 80%;
   background-color: #ffffff;
+  box-shadow: 0px 0px 65px rgba(0, 0, 0, 0.1);
   border-radius: 12px;
   display: flex;
 }
@@ -36,20 +37,34 @@ section.users-list-app {
   border-right: 2px solid #f4f4f4;
 }
 .users-list-area h2 {
-  margin: 0px 0px 35px 0px;
+  margin: 0px 0px 35px 10px;
   align-self: start;
 }
 .users-list-area .users-list {
   width: auto;
   height: auto;
-  max-height: 78%;
-  overflow-y: scroll;
+  margin-left: 1px;
+  max-height: 83%;
+  overflow-y: auto;
+  scrollbar-width: none;
   display: flex;
   flex-direction: column;
   gap: 30px;
+  background-color: rgba(225, 229, 240, 0.2);
+  border-radius: 25px;
+  box-shadow: 0px 0px 56px rgba(225, 229, 240, 0.5);
+}
+.users-list-area .users-list .user-item {
+  padding: 0px 10px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+.users-list-area .users-list .user-item:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  text-shadow: 3px 3px 11px rgba(0, 0, 0, 0.3);
 }
 .users-list-area .users-list .user-item:not(:last-child) {
-  border-bottom: 2px solid #f4f4f4;
+  border-bottom: 2px solid #ffffff;
   padding-bottom: 15px;
 }
 .users-list-area .users-list .user-item figure {
@@ -60,7 +75,6 @@ section.users-list-app {
 .users-list-area .users-list .user-item figure img {
   width: 53px;
   border-radius: 50%;
-  border: 2px solid black;
 }
 .users-list-area .users-list .user-item figure figcaption {
   display: flex;
@@ -81,6 +95,7 @@ section.users-list-app {
   height: auto;
   padding: 35px 45px;
   background-color: #ffffff;
+  border-radius: 12px;
   position: relative;
 }
 .selected-user-area div.loader {
@@ -107,7 +122,13 @@ section.users-list-app {
     transform: translateY(7px);
   }
 }
+.selected-user-area .selected-user-block {
+  width: 100%;
+  height: auto;
+}
 .selected-user-area .selected-user-block .selected-user-item {
+  padding: 0px 10px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: 35px;
 }
 .selected-user-area .selected-user-block .selected-user-item figure {
@@ -118,7 +139,6 @@ section.users-list-app {
 .selected-user-area .selected-user-block .selected-user-item figure img {
   width: 59px;
   border-radius: 50%;
-  border: 2px solid black;
 }
 .selected-user-area .selected-user-block .selected-user-item figure figcaption {
   display: flex;
@@ -133,18 +153,18 @@ section.users-list-app {
   color: #898586;
   font-size: 16px;
 }
-.selected-user-area .selected-user-block .more-info-area .more-info {
+.selected-user-area .selected-user-block .more-info-area ul {
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-.selected-user-area .selected-user-block .more-info-area .more-info li {
+.selected-user-area .selected-user-block .more-info-area ul li {
   display: flex;
   flex-direction: row;
 }
-.selected-user-area .selected-user-block .more-info-area .more-info li span {
+.selected-user-area .selected-user-block .more-info-area ul li span {
   color: #898586;
   width: 50%;
   height: auto;

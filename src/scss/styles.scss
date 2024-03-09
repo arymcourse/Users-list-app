@@ -1,4 +1,4 @@
-@use 'config' as *;
+@use 'config' as *; 
 
 * {
     box-sizing: border-box;
@@ -19,9 +19,10 @@ ul {
     list-style-type: none;
 }
 
-section.users-list-app {
-    @include set-size(65%, 80%);
+.users-list-app {
+    @include set-size(61%, 80%);
     background-color: $background-color;
+    box-shadow: 0px 0px 65px rgba(0, 0, 0, .1);
     border-radius: 12px;
     display: flex;
 }
@@ -31,17 +32,27 @@ section.users-list-app {
     padding: 35px;
     border-right: 2px solid $border-color;
     h2 {
-        margin: 0px 0px 35px 0px;
+        margin: 0px 0px 35px 10px;
         align-self: start;
     }
     .users-list {
         @include set-size(auto, auto);
-        max-height: 78%;
-        overflow-y: scroll;
+        margin-left: 1px;
+        max-height: 83%;
+        overflow-y: auto;  
+        scrollbar-width: none; 
         @include flex-container(column, null, null, 30px);
+        background-color: rgba($main-background-color, .2);
+        border-radius: 25px;
+        box-shadow: 0px 0px 56px rgba($main-background-color, .5);
         .user-item {
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.01);
+                text-shadow: 3px 3px 11px rgba(0, 0, 0, .3);
+            }
             &:not(:last-child) {
-                border-bottom: 2px solid $border-color;
+                border-bottom: 2px solid $background-color;
                 padding-bottom: 15px;
             }
             @include user-item(53px, 17px, 15px);
@@ -55,6 +66,7 @@ section.users-list-app {
     @include set-size(56%, auto);
     padding: 35px 45px;
     background-color: $background-color;
+    border-radius: 12px;
     position: relative;
     div.loader {
         visibility: hidden;
@@ -78,14 +90,13 @@ section.users-list-app {
     }
     
     .selected-user-block {
-
+        @include set-size(100%, auto);
         .selected-user-item {
             @include user-item(59px, 20px, 16px);
             margin-bottom: 35px;
         }
-
         .more-info-area {
-            .more-info {
+            ul {
                 @include set-size(100%, auto);
                 @include flex-container(column, null, null, 20px);
                 li {

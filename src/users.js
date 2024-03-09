@@ -1,22 +1,39 @@
 function UserService(url) {
-    this.url = url;
+    this.url = url; 
 }
 
 UserService.prototype.requestAllUsers = async function() {
-    const users = await fetch(this.url);
-    return users.json();
+    try {
+        const users = await fetch(this.url);
+        return users.json();
+    } catch(error) {
+        console.log(error);
+        return {};
+    }
 }
 
 UserService.prototype.requestUserById = async function(id) {
-    const users = await this.requestAllUsers();
-    const selectedUser = users.find(user => { return user.id === id; });
-    return selectedUser;
+    try {
+        const selectedUser = await fetch(`${this.url}/${id}`);
+        console.log(`${this.url}/${id}`)
+        return selectedUser.json();
+    } catch(error) {
+        console.log(error);
+        return {};
+    } 
+    // or
+    // try {
+    //     const users = await this.requestAllUsers();
+    //     const selectedUser = users.find(user => { return user.id === id; });
+    //     return selectedUser;
+    // } catch(error) {
+    //     console.log(error);
+    //     return {};
+    // }
 }
 
 UserService.prototype.renderAllUsers = function(users) {
     const usersList = document.querySelector('.users-list');
-
-    const baseImageUrl = new URL("https://api.lorem.space/image/face?w=150&h=150");
 
     users.forEach(user => {
         const userItem = document.createElement('li');
@@ -48,7 +65,7 @@ UserService.prototype.renderAllUsers = function(users) {
             selectedUserItem.querySelector('span:last-of-type').innerText = `Username:  ${selectedUser.username}`;
 
             moreInfoArea.innerHTML = `
-                <ul class="more-info">
+                <ul>
                     <li>
                         <span>Company</span>
                         <span>${selectedUser.company.name}</span>
@@ -75,7 +92,6 @@ UserService.prototype.renderAllUsers = function(users) {
         };
         
         userItem.addEventListener('click', showSelectedUser);
-        console.log(user);
         usersList.append(userItem);
     });
 }

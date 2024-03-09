@@ -22,6 +22,8 @@
 }
 
 @mixin user-item($img-width, $main-font-size, $other-font-size) {
+    padding: 0px 10px;    
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, .2);
         figure {
         margin: 0;
         display: flex;
@@ -29,7 +31,6 @@
         img {
             width: $img-width;
             border-radius: 50%;
-            border: 2px solid black;
         }
         figcaption {
             @include flex-container(column);
