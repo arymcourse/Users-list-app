@@ -1,4 +1,4 @@
-@use 'config' as *;  
+@use 'config' as *;   
 
 * {
     box-sizing: border-box;
@@ -102,7 +102,12 @@ ul {
             border: none;
             border-radius: 50%;
             background-color: rgba($main-color, .1);
-            box-shadow: 2px 2px 5px rgba($main-color, .2);
+            box-shadow: 0px 0px 5px rgba($main-color, .2);
+            transition: all .1s ease-in-out;
+            &:hover {
+                transform: scale(1.03);
+                box-shadow: 0px 0px 8px rgba($main-color, .3);
+            }
         }
         .selected-user-item {
             @include user-item(59px, 20px, 16px);
