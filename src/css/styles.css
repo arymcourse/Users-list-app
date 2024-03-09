@@ -125,6 +125,18 @@ ul {
 .selected-user-area .selected-user-block {
   width: 100%;
   height: auto;
+  position: relative;
+}
+.selected-user-area .selected-user-block .close-btn {
+  position: absolute;
+  right: 0;
+  padding: 2px 8px;
+  font-weight: 600;
+  font-size: 21px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(137, 133, 134, 0.1);
+  box-shadow: 2px 2px 5px rgba(137, 133, 134, 0.2);
 }
 .selected-user-area .selected-user-block .selected-user-item {
   padding: 0px 10px;

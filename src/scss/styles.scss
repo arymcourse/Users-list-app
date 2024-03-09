@@ -91,6 +91,18 @@ ul {
     
     .selected-user-block {
         @include set-size(100%, auto);
+        position: relative;
+        .close-btn {
+            position: absolute;
+            right: 0;
+            padding: 2px 8px;
+            font-weight: 600;
+            font-size: 21px;
+            border: none;
+            border-radius: 50%;
+            background-color: rgba($main-color, .1);
+            box-shadow: 2px 2px 5px rgba($main-color, .2);
+        }
         .selected-user-item {
             @include user-item(59px, 20px, 16px);
             margin-bottom: 35px;

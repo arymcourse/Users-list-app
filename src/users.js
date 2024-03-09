@@ -53,6 +53,13 @@ UserService.prototype.renderAllUsers = function(users) {
         `;
 
         const showSelectedUser = async () => {
+            const selectedUserBlock = document.querySelector('.selected-user-block');
+            selectedUserBlock.style.display = 'block';
+            const closeBtn = document.querySelector('.close-btn');
+            closeBtn.addEventListener('click', () => {
+                selectedUserBlock.style.display = 'none';
+            })
+
             const loader = document.querySelector('.loader');
             const selectedUserItem = document.querySelector('.selected-user-item');
             const moreInfoArea = document.querySelector('.more-info-area');
@@ -60,6 +67,7 @@ UserService.prototype.renderAllUsers = function(users) {
             loader.style.visibility = 'visible';
             const selectedUser = await this.requestUserById(user.id);
             loader.style.visibility = 'hidden';
+
 
             selectedUserItem.innerHTML = userItem.innerHTML;
             selectedUserItem.querySelector('span:last-of-type').innerText = `Username:  ${selectedUser.username}`;
