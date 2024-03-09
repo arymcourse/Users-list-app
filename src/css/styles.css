@@ -127,6 +127,7 @@ ul {
   width: 100%;
   height: auto;
   position: relative;
+  display: none;
 }
 .selected-user-area .selected-user-block .close-btn {
   position: absolute;
