@@ -68,7 +68,7 @@ UserService.prototype.renderAllUsers = function(users) {
             const selectedUser = await this.requestUserById(user.id);
             setTimeout(() => {
                 loader.style.visibility = 'hidden';
-            }, 1000);
+            }, 500);
 
             selectedUserItem.innerHTML = userItem.innerHTML;
             selectedUserItem.querySelector('span:last-of-type').innerText = `Username:  ${selectedUser.username}`;
