@@ -1,0 +1,47 @@
+@use 'variables' as *;
+
+@mixin flex-container($direction: null, $justify: null, $align: null, $gap: null) {
+    display: flex;
+    @if $direction != null {
+        flex-direction: $direction;
+    }
+    @if $justify != null {
+       justify-content: $justify;
+    }
+    @if $align != null {
+        align-items: $align;
+    }
+    @if $gap != null {
+        gap: $gap;
+    }
+}
+
+@mixin set-size($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin user-item($img-width, $main-font-size, $other-font-size) {
+        figure {
+        margin: 0;
+        display: flex;
+        gap: 20px;
+        img {
+            width: $img-width;
+            border-radius: 50%;
+            border: 2px solid black;
+        }
+        figcaption {
+            @include flex-container(column);
+            & span:first-child {
+                color: $main-color-bold;
+                font-weight: 700;
+                font-size: $main-font-size;
+            }
+            & span:last-child {
+                color: $main-color;
+                font-size: $other-font-size;
+            }
+        }
+    }
+}
