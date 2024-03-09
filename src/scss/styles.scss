@@ -1,4 +1,4 @@
-@use 'config' as *; 
+@use 'config' as *;  
 
 * {
     box-sizing: border-box;
@@ -71,6 +71,7 @@ ul {
     div.loader {
         visibility: hidden;
         position: absolute;
+        z-index: 10;
         background-color: $background-color;
         @include set-size(calc(100% - 90px), calc(100% - 70px));
         @include flex-container(row, center, center);

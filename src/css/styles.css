@@ -101,6 +101,7 @@ ul {
 .selected-user-area div.loader {
   visibility: hidden;
   position: absolute;
+  z-index: 10;
   background-color: #ffffff;
   width: calc(100% - 90px);
   height: calc(100% - 70px);
